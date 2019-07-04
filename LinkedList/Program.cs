@@ -11,16 +11,20 @@ namespace LinkedList
 	{
 		static void Main(string[] args)
 		{
-			SinglyLinkedList<int> list = new SinglyLinkedList<int>(50);
-			list.PushBack(10);
-			list.PushBack(20);
-			list.PushBack(30);
+			CircularLinkedList<int> list = new CircularLinkedList<int>();
+			
+			list.PushFirst(10);
+			list.PushFirst(20);
+			list.PushFirst(30);
 
-			while (list.head != null)
+			Node<int> temp = list.head;
+			do
 			{
-				Console.Write(list.head.data + "-->");
-				list.head = list.head.next;
+				Console.Write(temp.data + "-->");
+				temp = temp.next;
 			}
+			while (temp != list.head);
+
 			Console.WriteLine("\n"+list.length);
 
 			Console.ReadKey();
