@@ -26,6 +26,7 @@ namespace LinkedList
 			while (temp != list.head);
 
 			Console.WriteLine("\n"+list.length);
+			Console.Write("");
 
 			Console.ReadKey();
 		}
